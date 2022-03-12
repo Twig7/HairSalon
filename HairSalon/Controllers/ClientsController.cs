@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace HairSalon.Controllers
 {
-  public class ClientsController : Controllers{
+  public class ClientsController : Controller{
     private readonly HairSalonContext _db;
 
     public ClientsController(HairSalonContext db)
@@ -23,7 +23,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.StylistId = new SleectList(_db.Stylists, "STylistId", "Name", "Speciality");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name", "Specialty");
       return View();
     }
 
@@ -38,7 +38,7 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      return Veiw(thisClient);
+      return View(thisClient);
     }
 
     public ActionResult Edit(int id)
