@@ -24,11 +24,9 @@ DROP TABLE IF EXISTS `clients`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clients` (
   `ClientId` int NOT NULL,
-  `Clientscol` varchar(255) DEFAULT NULL,
   `Name` varchar(255) DEFAULT NULL,
-  `Stylist_StylistId` int NOT NULL,
   `Number` int NOT NULL,
-  PRIMARY KEY (`ClientId`,`Number`,`Stylist_StylistId`)
+  PRIMARY KEY (`ClientId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,7 +41,6 @@ CREATE TABLE `stylists` (
   `StylistId` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   `Specialty` varchar(255) DEFAULT NULL,
-  `Clients` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
