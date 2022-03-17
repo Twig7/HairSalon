@@ -8,14 +8,11 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
-
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Number)
-  @Html.TextBoxFor(model => model.Number)
+  @Html.LabelFor(model => model.Details)
+  @Html.TextBoxFor(model => model.Details)
   <button type="submit" class="btn btn-primary">Add your new client!</button>
 }
 <p>@Html.ActionLink("Back to clients", "Index")</p>
